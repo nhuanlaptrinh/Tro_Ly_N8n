@@ -11,7 +11,6 @@ def rfile(name_file):
             st.error(f"File {name_file} không tồn tại.")
 
 
-
 # Constants
 WEBHOOK_URL = rfile("WEBHOOK_URL.txt").strip()
 BEARER_TOKEN = rfile("BEARER_TOKEN.txt").strip()

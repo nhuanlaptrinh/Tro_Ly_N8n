@@ -2,17 +2,19 @@ import streamlit as st
 import requests
 import uuid
 
-# Constants
-WEBHOOK_URL = "https://n8n.srv792087.hstgr.cloud/webhook/e985d15f-b2f6-456d-be15-97e0b1544a40/chat"
-BEARER_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2Y1MTU2My00YzdhLTRlZjgtYmIyMC1mNTAxZGI4ZDc3OWUiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzQ2Mzc1ODQxLCJleHAiOjE3NDg5MDE2MDB9.985Iqo51r--sqd9jrvtbr_lOH5seRUIAN6QYXe73Ty8"
-
 # Hàm đọc nội dung từ file văn bản
 def rfile(name_file):
-    #try:
-    with open(name_file, "r", encoding="utf-8") as file:
-        return file.read()
-    #except FileNotFoundError:
-    #    return "Chào mừng bạn đến với Trợ Lý AI!"  # Nội dung mặc định nếu file không tồn tại
+    try:
+        with open(name_file, "r", encoding="utf-8") as file:
+            return file.read()
+    except FileNotFoundError:
+            st.error(f"File {name_file} không tồn tại.")
+
+
+
+# Constants
+WEBHOOK_URL = rfile("WEBHOOK_URL.txt").strip()
+BEARER_TOKEN = rfile("BEARER_TOKEN.txt").strip()
 
 def generate_session_id():
     return str(uuid.uuid4())
@@ -35,22 +37,13 @@ def send_message_to_llm(session_id, message):
 
 def main():
     # Hiển thị logo (nếu có)
-    # try:
-    col1, col2, col3 = st.columns([3, 2, 3])
-    with col2:
-        st.image("logo.png")
-    # except:
-    #     pass
+    try:
+        col1, col2, col3 = st.columns([3, 2, 3])
+        with col2:
+            st.image("logo.png")
+    except:
+        pass
     # Hiển thị tiêu đề
-
-    # try:
-    #     st.image("logo.png")
-    # except FileNotFoundError:
-    #     st.error("Không tìm thấy file logo.png. Vui lòng kiểm tra đường dẫn.")
-    # except Exception as e:
-    #     st.error(f"Lỗi khi tải hình ảnh: {e}")
-
-
 
 
     title_content = rfile("00.xinchao.txt")

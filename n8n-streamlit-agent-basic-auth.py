@@ -8,11 +8,11 @@ BEARER_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjN2Y1MTU2My00Yzd
 
 # Hàm đọc nội dung từ file văn bản
 def rfile(name_file):
-    try:
-        with open(name_file, "r", encoding="utf-8") as file:
-            return file.read()
-    except FileNotFoundError:
-        return "Chào mừng bạn đến với Trợ Lý AI!"  # Nội dung mặc định nếu file không tồn tại
+    #try:
+    with open(name_file, "r", encoding="utf-8") as file:
+        return file.read()
+    #except FileNotFoundError:
+    #    return "Chào mừng bạn đến với Trợ Lý AI!"  # Nội dung mặc định nếu file không tồn tại
 
 def generate_session_id():
     return str(uuid.uuid4())

@@ -34,21 +34,21 @@ def send_message_to_llm(session_id, message):
         return f"Error: Failed to connect to the LLM - {str(e)}"
 
 def main():
-    # # Hiển thị logo (nếu có)
-    # # try:
-    # col1, col2, col3 = st.columns([3, 2, 3])
-    # with col2:
-    #     st.image("logo.png", use_container_width=True)
-    # # except:
-    # #     pass
-    # # Hiển thị tiêu đề
-
-    try:
+    # Hiển thị logo (nếu có)
+    # try:
+    col1, col2, col3 = st.columns([3, 2, 3])
+    with col2:
         st.image("logo.png")
-    except FileNotFoundError:
-        st.error("Không tìm thấy file logo.png. Vui lòng kiểm tra đường dẫn.")
-    except Exception as e:
-        st.error(f"Lỗi khi tải hình ảnh: {e}")
+    # except:
+    #     pass
+    # Hiển thị tiêu đề
+
+    # try:
+    #     st.image("logo.png")
+    # except FileNotFoundError:
+    #     st.error("Không tìm thấy file logo.png. Vui lòng kiểm tra đường dẫn.")
+    # except Exception as e:
+    #     st.error(f"Lỗi khi tải hình ảnh: {e}")
 
 
 

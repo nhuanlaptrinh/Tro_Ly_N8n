@@ -44,7 +44,7 @@ def main():
     # # Hiển thị tiêu đề
 
     try:
-        st.image("logo.png", use_container_width=True)
+        st.image("logo.png")
     except FileNotFoundError:
         st.error("Không tìm thấy file logo.png. Vui lòng kiểm tra đường dẫn.")
     except Exception as e:

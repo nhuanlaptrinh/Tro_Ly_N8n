@@ -35,12 +35,12 @@ def send_message_to_llm(session_id, message):
 
 def main():
     # Hiển thị logo (nếu có)
-    try:
-        col1, col2, col3 = st.columns([3, 2, 3])
-        with col2:
-            st.image("logo.png", use_container_width=True)
-    except:
-        pass
+    # try:
+    col1, col2, col3 = st.columns([3, 2, 3])
+    with col2:
+        st.image("logo.png", use_container_width=True)
+    # except:
+    #     pass
     # Hiển thị tiêu đề
     title_content = rfile("00.xinchao.txt")
     print ("title_content",title_content)
